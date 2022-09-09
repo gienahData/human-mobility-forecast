@@ -1,0 +1,57 @@
+Update - revision
+
+1.) Preprocessing of the polygon grid
+
+## This script calculates unique tower ids:
+
+python3 year_polygon_data.py --source_folder '/media/Local/Mobilcell/Data/' --target_folder '/media/Local/Mobilcell/DayPolygonData/'
+
+
+## This script generates daily polygon encodings:
+
+python3 day_polygon_encodings.py --source_folder '/media/Data_storage/Mobilcell/Data/' --target_folder '/media/Data_storage/Mobilcell/DayPolygonData/'
+
+
+## This script uses daily polygon encodings to generate a fix encoding for the whole year:
+
+python3 fix_polygon_grid.py --source_folder '/media/Data_storage/Mobilcell/DayPolygonData/' --target_folder '/media/Data_storage/Mobilcell/DayPolygonData/'
+
+
+## This script uses daily polygon encodings to calculate cell overlap matrices for the whole year
+
+python3 overlap_matrix_calculator.py --source_folder '/media/Data_storage/Mobilcell/DayPolygonData/' --target_folder '/media/Data_storage/Mobilcell/DayPolygonData/'
+
+
+## This script uses previously calculated fixed locations and the overlap matrices to merge individual cells into "supercells" thats positions will be the tower positions and the nodes of the mobility graph
+
+python3 merge_polygon_grid.py --source_folder '/media/Data_storage/Mobilcell/DayPolygonData/' --target_folder '/media/Data_storage/Mobilcell/DayPolygonData/'
+
+
+2.) Preprocessing the mobility network
+
+## This script generates output of 60 (default) minutes long intervals
+
+python3 time_interval_graph_preparator.py --source_folder '/media/Data_storage/Mobilcell/Data/'  --source_pol_folder '/media/Data_storage/Mobilcell/DayPolygonData/' --target_folder '/media/Data_storage/Mobilcell/DayEventData/' --start_idx 0 --end_idx 1
+
+
+## This script uses the prepared short time interval daily data and generates undirected graphs in shapes that can be fed into graph DL
+
+
+# python3 time_interval_graph_generator.py --source_folder '/media/Data_storage/Mobilcell/DayEventData/' --source_pol_folder '/media/Data_storage/Mobilcell/DayPolygonData/' --target_folder '/media/Data_storage/Mobilcell/TimeIntervalGraphs/' --start_idx 0 --end_idx 1
+
+
+--
+
+to-do:
+
+*feature creator to graph nodes and edges
+-weather
+-land use
+-other distributions (eg. speed)
+
+*feature importance examination
+
+*learnt pattern understanding
+
+
+

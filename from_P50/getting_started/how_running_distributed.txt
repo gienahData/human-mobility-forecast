@@ -1,0 +1,30 @@
+1. processz: 82-től indexelve, 82-105 közé indítva
+2. processz: 105-től indexelve, 105-130 közé indítva
+3. processz: nohup identifier: 32309  (160-183) között fut
+
+
+20190811
+eddig kész: 20190223
+
+wdc-n pedig:
+130-160
+250-280
+280-310
+
+egyelőre kimarad 310-365
+
+
+
+
+[1] 6281
+abiricz@Andromeda:~/Projects/Mobilcell/getting_started$ nohup: ignoring input and redirecting stderr to stdout
+
+abiricz@Andromeda:~/Projects/Mobilcell/getting_started$ nano day_graph_generator.py 
+abiricz@Andromeda:~/Projects/Mobilcell/getting_started$ nohup python3 day_graph_generator.py > log_graph_5.txt &
+[2] 6502
+abiricz@Andromeda:~/Projects/Mobilcell/getting_started$ nohup: ignoring input and redirecting stderr to stdout
+
+abiricz@Andromeda:~/Projects/Mobilcell/getting_started$ nano day_graph_generator.py 
+abiricz@Andromeda:~/Projects/Mobilcell/getting_started$ nohup python3 day_graph_generator.py > log_graph_6.txt &
+[3] 6614
+abiricz@Andromeda:~/Projects/Mobilcell/getting_started$ nohup: ignoring input and redirecting stderr to stdout
